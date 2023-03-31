@@ -7,7 +7,7 @@ const App = () => {
   const [tours,setTours] = useState(data)
 
   function removeTour(id){
-    const newTours = tours.filter(tour => tour.id != id)
+    const newTours = tours.filter(tour => tour.id !== id)
     setTours(newTours)
   }
 
@@ -15,7 +15,7 @@ const App = () => {
     return (
       <div className="refresh">
         <h2>No Tours Left</h2>
-        <button onClick={() => setTours(data)}> 
+        <button className="btn-white" onClick={() => setTours(data)}> 
           Refresh
         </button>
       </div>
@@ -23,7 +23,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="App">
       <Tours tours={tours} removeTour={removeTour}/>
     </div>
   )
